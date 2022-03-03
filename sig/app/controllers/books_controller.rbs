@@ -1,0 +1,30 @@
+class BooksController < ApplicationController
+  # GET /books or /books.json
+  def index: () -> untyped
+
+  # GET /books/1 or /books/1.json
+  def show: () -> nil
+
+  # GET /books/new
+  def new: () -> untyped
+
+  # GET /books/1/edit
+  def edit: () -> nil
+
+  # POST /books or /books.json
+  def create: () -> untyped
+
+  # PATCH/PUT /books/1 or /books/1.json
+  def update: () -> untyped
+
+  # DELETE /books/1 or /books/1.json
+  def destroy: () -> untyped
+
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_book: () -> untyped
+
+  # Only allow a list of trusted parameters through.
+  def book_params: () -> untyped
+end
