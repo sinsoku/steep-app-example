@@ -67,4 +67,19 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  config.generators.after_generate do |files|
+    files.each do |f|
+      next unless f.match?(%r{^app/.+\.rb$})
+
+      rb_path = Rails.root.join(f)
+      rbs_path = Rails.root.join('sig', f.sub(/\.rb$/, '.rbs'))
+      rbs_path.dirname.mkpath unless rbs_path.dirname.exist?
+      system("bundle exec rbs prototype rb #{rb_path} > #{rbs_path}", exception: true)
+    end
+
+    if files.any? { |f| f.match?(%r{^app/.+\.rb$}) }
+      system("bin/rails rbs_rails:all", exception: true)
+    end
+  end
 end
