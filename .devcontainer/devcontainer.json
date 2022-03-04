@@ -1,0 +1,19 @@
+{
+  "name": "app",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+
+  "extensions": [
+    "rebornix.Ruby",
+    "soutaro.steep-vscode"
+  ],
+
+  "postCreateCommand": "bin/setup",
+
+  "remoteUser": "vscode"
+}
