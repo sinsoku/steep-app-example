@@ -63,7 +63,7 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 
-  gem 'rbs_rails', require: false, github: 'pocke/rbs_rails'
-  gem 'steep', require: false, github: 'soutaro/steep'
+  gem 'rbs_rails', require: false
+  gem 'steep', require: false
 end
 
